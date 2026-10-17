@@ -1,0 +1,7 @@
+arm,arm_label,metric_key,metric,role,estimate,ci_low,ci_high,unit,method,p_value,p_holm,status
+Mens E-Mail,Men's email,conversion,Bought something,primary,0.6805006519615695,0.5014344671481533,0.8640723396917827,percentage points,Newcombe CI; two-proportion z-test; Holm across 2 arms,1.5232235005955425e-13,3.046447001191085e-13,clearly better
+Mens E-Mail,Men's email,visit,Visited the site,secondary,7.6589563651531245,6.995330808373154,8.322674127411137,percentage points,Newcombe CI; two-proportion z-test; Holm across 2 arms,5.685165482802319e-112,1.1370330965604637e-111,clearly better
+Mens E-Mail,Men's email,spend,Spend per customer (USD),secondary,0.7698271558945368,0.4908794789522362,1.0559775538424554,USD,"Percentile bootstrap (10,000 resamples)",,,clearly better
+Womens E-Mail,Women's email,conversion,Bought something,primary,0.3111057511085258,0.15016571318770086,0.474547131367293,percentage points,Newcombe CI; two-proportion z-test; Holm across 2 arms,0.00015710512910668448,0.00015710512910668448,clearly better
+Womens E-Mail,Women's email,visit,Visited the site,secondary,4.523310658705299,3.8894095359988134,5.15743429622136,percentage points,Newcombe CI; two-proportion z-test; Holm across 2 arms,3.1824031593349214e-44,3.1824031593349214e-44,clearly better
+Womens E-Mail,Women's email,spend,Spend per customer (USD),secondary,0.4244122159365967,0.1699470979661306,0.6844855394535801,USD,"Percentile bootstrap (10,000 resamples)",,,clearly better

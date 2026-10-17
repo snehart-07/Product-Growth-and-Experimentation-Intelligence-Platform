@@ -1,0 +1,3 @@
+variant,variant_label,role,players,d1_retained,d1_rate,d7_retained,d7_rate,rounds_mean_winsorized,rounds_mean_raw,rounds_median
+gate_30,Level 30 (control),control,44700,20034,0.4481879194630872,8502,0.19020134228187918,51.03090791946309,52.45626398210291,17.0
+gate_40,Level 40 (treatment),treatment,45489,20119,0.44228274967574577,8279,0.18200004396667327,50.93526347028953,51.29877552814966,16.0

@@ -1,0 +1,21 @@
+# Pinned versions verified with Python 3.13 on macOS (arm64).
+numpy==2.5.4
+pandas==3.0.6
+pyarrow==26.0.0
+duckdb==1.5.6
+scipy==1.18.1
+statsmodels==0.15.0
+scikit-learn==1.9.1
+matplotlib==3.11.2
+certifi==2026.7.22
+# Google BigQuery (GA4 extract only)
+google-cloud-bigquery==3.46.2
+google-cloud-bigquery-storage==2.43.0
+db-dtypes==1.8.0
+# Tableau extract (.hyper). CSV export works without it.
+tableauhyperapi==0.0.26479
+# Notebooks + tests
+nbformat==5.11.1
+nbconvert==7.17.2
+ipykernel==7.4.0
+pytest==9.1.1

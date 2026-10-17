@@ -1,0 +1,10 @@
+arm,arm_label,role,metric_key,metric,customers,events,value,ci_low,ci_high
+Mens E-Mail,Men's email,treatment,conversion,Bought something,21307,267,0.01253109306800582,0.011122885010307802,0.014115041885257276
+No E-Mail,No email,control,conversion,Bought something,21306,122,0.005726086548390125,0.004798205845961411,0.006832169692008917
+Womens E-Mail,Women's email,treatment,conversion,Bought something,21387,189,0.008837144059475383,0.007668063369361126,0.010182635003387489
+Mens E-Mail,Men's email,treatment,spend,Spend per customer (USD),21307,,1.422616511005773,,
+No E-Mail,No email,control,spend,Spend per customer (USD),21306,,0.6527893551112361,,
+Womens E-Mail,Women's email,treatment,spend,Spend per customer (USD),21387,,1.0772015710478329,,
+Mens E-Mail,Men's email,treatment,visit,Visited the site,21307,3894,0.18275684047496127,0.17762499082168498,0.18800306163588704
+No E-Mail,No email,control,visit,Visited the site,21306,2262,0.10616727682343002,0.10210165383004598,0.11037488981624681
+Womens E-Mail,Women's email,treatment,visit,Visited the site,21387,3238,0.151400383410483,0.14665917510040702,0.1562667977415205

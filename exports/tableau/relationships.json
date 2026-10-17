@@ -1,0 +1,43 @@
+[
+  {
+    "left": "store_daily",
+    "right": "dim_date",
+    "on": [
+      [
+        "first_visit_date",
+        "date"
+      ]
+    ]
+  },
+  {
+    "left": "funnel_daily_long",
+    "right": "dim_date",
+    "on": [
+      [
+        "first_visit_date",
+        "date"
+      ]
+    ]
+  },
+  {
+    "left": "overview_kpis",
+    "right": "metric_definitions",
+    "on": [
+      [
+        "metric_key",
+        "metric_key"
+      ]
+    ],
+    "note": "partial; tooltip lookup"
+  },
+  {
+    "left": "dataset_catalog",
+    "right": "overview_kpis",
+    "on": [
+      [
+        "dataset_key",
+        "dataset_key"
+      ]
+    ]
+  }
+]

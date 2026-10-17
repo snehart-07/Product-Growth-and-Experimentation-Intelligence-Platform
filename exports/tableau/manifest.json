@@ -1,0 +1,1499 @@
+{
+  "generated_at_utc": "2026-10-17T12:43:46+00:00",
+  "inputs": {
+    "ga4_duckdb": "data/processed/ga4/pulseiq_ga4.duckdb",
+    "results": "reports/results/*.json",
+    "experiments_raw": [
+      "data/raw/cookie_cats/cookie_cats.csv",
+      "data/raw/hillstrom/hillstrom.csv"
+    ]
+  },
+  "hyper": "written",
+  "tables": {
+    "dim_date": {
+      "rows": 92,
+      "dataset": "calendar",
+      "nature": "reference",
+      "grain": "one row per calendar day 2020-11-01 .. 2021-01-31",
+      "csv": "exports/tableau/csv/dim_date.csv",
+      "sha256": "de9e07b75e6e7f0b1403aad94785d4728fe0d34588947704d80977c06e6e24c0"
+    },
+    "dataset_catalog": {
+      "rows": 4,
+      "dataset": "all",
+      "nature": "reference",
+      "grain": "one row per dataset",
+      "csv": "exports/tableau/csv/dataset_catalog.csv",
+      "sha256": "d66ec0252bb14038295fd9a0a3ee0596eb6812a01bcea728e39c1dbff41b1ed1"
+    },
+    "metric_definitions": {
+      "rows": 20,
+      "dataset": "all",
+      "nature": "reference",
+      "grain": "one row per metric",
+      "csv": "exports/tableau/csv/metric_definitions.csv",
+      "sha256": "dfe71c6285449e04011c150ba4c39e1702ab30f93e3f442ea4f05fc1eef195db"
+    },
+    "overview_kpis": {
+      "rows": 13,
+      "dataset": "all",
+      "nature": "reference",
+      "grain": "one row per headline metric",
+      "csv": "exports/tableau/csv/overview_kpis.csv",
+      "sha256": "6bda193e77be8d5bd3b3fbb4adccbf8201e8c2e9d3ea110f85f443645704236e"
+    },
+    "store_daily": {
+      "rows": 11728,
+      "dataset": "ga4",
+      "nature": "observational",
+      "grain": "first-visit date \u00d7 source \u00d7 device \u00d7 country_group",
+      "csv": "exports/tableau/csv/store_daily.csv",
+      "sha256": "6e2899855550f8cd54e03aadca3bcc4f9ee8965d2389e2381d5eccc5d39720c6"
+    },
+    "funnel_daily_long": {
+      "rows": 54110,
+      "dataset": "ga4",
+      "nature": "observational",
+      "grain": "first-visit date \u00d7 source \u00d7 device \u00d7 country_group \u00d7 stage",
+      "csv": "exports/tableau/csv/funnel_daily_long.csv",
+      "sha256": "7e13f96d62f00cd74e71d06dbd9d6ddbee1d98696792db635f6580c44cd25fb4"
+    },
+    "funnel_steps": {
+      "rows": 10,
+      "dataset": "ga4",
+      "nature": "observational",
+      "grain": "order_type \u00d7 stage (all visitors)",
+      "csv": "exports/tableau/csv/funnel_steps.csv",
+      "sha256": "51047134693a1674add7b9276c01d8e4cca537657e1b828ddcff453a42889269"
+    },
+    "funnel_segments": {
+      "rows": 56,
+      "dataset": "ga4",
+      "nature": "observational",
+      "grain": "segment_type \u00d7 segment \u00d7 stage",
+      "csv": "exports/tableau/csv/funnel_segments.csv",
+      "sha256": "881039ac36432d032aa9a15f511bf0fcd8bfa1236d857dd8aa5bfe2a7725562b"
+    },
+    "retention_cohorts": {
+      "rows": 25944,
+      "dataset": "ga4",
+      "nature": "observational",
+      "grain": "cohort week \u00d7 source \u00d7 device \u00d7 country_group \u00d7 age week",
+      "csv": "exports/tableau/csv/retention_cohorts.csv",
+      "sha256": "2a1fff7c10dcbb320ac4777800d5080cc6cee613d93be9a8a8ca31dfda9b8b07"
+    },
+    "retention_rates": {
+      "rows": 19,
+      "dataset": "ga4",
+      "nature": "observational",
+      "grain": "window \u00d7 segment_type \u00d7 segment",
+      "csv": "exports/tableau/csv/retention_rates.csv",
+      "sha256": "5f25a578a7d7facb326fba8c52b29e2fb77a29da6f02a280c749d8915a95ae63"
+    },
+    "retention_tests": {
+      "rows": 8,
+      "dataset": "ga4",
+      "nature": "observational",
+      "grain": "one row per statistical test",
+      "csv": "exports/tableau/csv/retention_tests.csv",
+      "sha256": "bbdf0e80174938e669e568daf12bb5b6348b55cb5bcb16ea922b92738ac97d98"
+    },
+    "behaviour_groups": {
+      "rows": 12109,
+      "dataset": "ga4",
+      "nature": "observational",
+      "grain": "cohort week \u00d7 source \u00d7 device \u00d7 country_group \u00d7 behaviour \u00d7 did_it",
+      "csv": "exports/tableau/csv/behaviour_groups.csv",
+      "sha256": "485d65510e2e99b5f7d2ff32f3374c5762c7eeb0ee968aae77f0f675a5be9ea0"
+    },
+    "behaviour_model": {
+      "rows": 23,
+      "dataset": "ga4",
+      "nature": "observational",
+      "grain": "one row per model term",
+      "csv": "exports/tableau/csv/behaviour_model.csv",
+      "sha256": "47a67d51d68f5a597a9c02c9a8c5af8aff42a61df78b7e130bc397ff74129784"
+    },
+    "followup_test_design": {
+      "rows": 2,
+      "dataset": "ga4",
+      "nature": "reference",
+      "grain": "one row per minimum detectable effect",
+      "csv": "exports/tableau/csv/followup_test_design.csv",
+      "sha256": "81d9c7fb0ada0215faba938ac14ff71044f69ec1ba12dfb1d162b1f1ce1fe91a"
+    },
+    "game_arms": {
+      "rows": 2,
+      "dataset": "cookie_cats",
+      "nature": "randomized experiment",
+      "grain": "one row per variant",
+      "csv": "exports/tableau/csv/game_arms.csv",
+      "sha256": "5b719852d564c45366790b5ee6b40acb06b00d6c086a1ff3fef42b0764847e58"
+    },
+    "game_effects": {
+      "rows": 7,
+      "dataset": "cookie_cats",
+      "nature": "randomized experiment",
+      "grain": "one row per metric \u00d7 method",
+      "csv": "exports/tableau/csv/game_effects.csv",
+      "sha256": "af0d4cd2eee4c0956e4269dcbe963e7e9bb965077a68a788654ea8af7095db77"
+    },
+    "game_checks": {
+      "rows": 7,
+      "dataset": "cookie_cats",
+      "nature": "randomized experiment",
+      "grain": "one row per check",
+      "csv": "exports/tableau/csv/game_checks.csv",
+      "sha256": "368174bc08023413ebb0ea39239fb611fe3d35df41ea491a2bf4cbb59ff83e92"
+    },
+    "game_power_curve": {
+      "rows": 40,
+      "dataset": "cookie_cats",
+      "nature": "randomized experiment",
+      "grain": "one row per hypothetical effect size",
+      "csv": "exports/tableau/csv/game_power_curve.csv",
+      "sha256": "a9d1ff57e73604515a5f98ae9094b51e863d8da9361cbd08e93656b8c95a6193"
+    },
+    "email_arms": {
+      "rows": 9,
+      "dataset": "hillstrom",
+      "nature": "randomized experiment",
+      "grain": "arm \u00d7 metric",
+      "csv": "exports/tableau/csv/email_arms.csv",
+      "sha256": "169b325eb92d595bc0035ee2ba6b23da8cdf892bc26cf65808e3a566261a0940"
+    },
+    "email_effects": {
+      "rows": 6,
+      "dataset": "hillstrom",
+      "nature": "randomized experiment",
+      "grain": "treatment arm \u00d7 metric",
+      "csv": "exports/tableau/csv/email_effects.csv",
+      "sha256": "07c6726509f73081fb5ca38a5cdadade772ace5f370edfec4639095d4aab1856"
+    },
+    "email_subgroups": {
+      "rows": 44,
+      "dataset": "hillstrom",
+      "nature": "randomized experiment",
+      "grain": "arm \u00d7 covariate \u00d7 level",
+      "csv": "exports/tableau/csv/email_subgroups.csv",
+      "sha256": "7f2869a6c4dd5b920b11bdbb202fcec6ac31beb21b5b7351edd8acb07570eceb"
+    },
+    "email_interactions": {
+      "rows": 24,
+      "dataset": "hillstrom",
+      "nature": "randomized experiment",
+      "grain": "outcome \u00d7 arm \u00d7 covariate",
+      "csv": "exports/tableau/csv/email_interactions.csv",
+      "sha256": "5a8926b64749e3f061df6a8887a45acc154b8cb088e7161080eea6dd186a0ee2"
+    },
+    "email_checks": {
+      "rows": 4,
+      "dataset": "hillstrom",
+      "nature": "randomized experiment",
+      "grain": "one row per check",
+      "csv": "exports/tableau/csv/email_checks.csv",
+      "sha256": "7a6fe78188757280146f07d93901197224f4e9244bb0771a73ee1c8f509b4bd4"
+    }
+  },
+  "validation": {
+    "checks": 259,
+    "passed": 259,
+    "results": [
+      {
+        "check": "all schema tables exported",
+        "passed": true,
+        "detail": "missing=set()"
+      },
+      {
+        "check": "dim_date: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "dim_date: not empty",
+        "passed": true,
+        "detail": "rows=92"
+      },
+      {
+        "check": "dim_date: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "dim_date: primary key unique (date)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "dim_date.is_weekend: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "dataset_catalog: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "dataset_catalog: not empty",
+        "passed": true,
+        "detail": "rows=4"
+      },
+      {
+        "check": "dataset_catalog: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "dataset_catalog: primary key unique (dataset_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "dataset_catalog.rows: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "dataset_catalog.causal_claims_allowed: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "dataset_catalog.exported: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "metric_definitions: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "metric_definitions: not empty",
+        "passed": true,
+        "detail": "rows=20"
+      },
+      {
+        "check": "metric_definitions: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "metric_definitions: primary key unique (metric_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "overview_kpis: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "overview_kpis: not empty",
+        "passed": true,
+        "detail": "rows=13"
+      },
+      {
+        "check": "overview_kpis: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "overview_kpis: primary key unique (metric_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "overview_kpis: ci_low \u2264 value \u2264 ci_high",
+        "passed": true,
+        "detail": "violations=0"
+      },
+      {
+        "check": "store_daily: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily: not empty",
+        "passed": true,
+        "detail": "rows=11728"
+      },
+      {
+        "check": "store_daily: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily: primary key unique (first_visit_date, source_raw, device, country_group)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "store_daily.new_visitors: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.funnel_eligible: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.viewed_product: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.added_to_cart: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.started_checkout: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.purchased: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.d7_eligible: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.d7_returned: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.d7_exact_returned: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.d30_eligible: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily.d30_returned: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily: no causal wording in an observational table",
+        "passed": true,
+        "detail": "hits=[]"
+      },
+      {
+        "check": "funnel_daily_long: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_daily_long: not empty",
+        "passed": true,
+        "detail": "rows=54110"
+      },
+      {
+        "check": "funnel_daily_long: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_daily_long: primary key unique (first_visit_date, source_raw, device, country_group, stage_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "funnel_daily_long.stage_order: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_daily_long.users: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_daily_long: no causal wording in an observational table",
+        "passed": true,
+        "detail": "hits=[]"
+      },
+      {
+        "check": "funnel_steps: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_steps: not empty",
+        "passed": true,
+        "detail": "rows=10"
+      },
+      {
+        "check": "funnel_steps: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_steps: primary key unique (order_type, stage_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "funnel_steps.share_of_entrants: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.00748048160052971 max=1.0"
+      },
+      {
+        "check": "funnel_steps.conversion_from_previous: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.19214566654022003 max=0.7492469097330425"
+      },
+      {
+        "check": "funnel_steps.drop_rate: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.25075309026695747 max=0.80785433345978"
+      },
+      {
+        "check": "funnel_steps: ci_low \u2264 conversion_from_previous \u2264 ci_high",
+        "passed": true,
+        "detail": "violations=0"
+      },
+      {
+        "check": "funnel_steps.stage_order: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_steps.users: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_steps.users_lost: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_steps.is_largest_drop: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_steps: no causal wording in an observational table",
+        "passed": true,
+        "detail": "hits=[]"
+      },
+      {
+        "check": "funnel_segments: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_segments: not empty",
+        "passed": true,
+        "detail": "rows=56"
+      },
+      {
+        "check": "funnel_segments: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_segments: primary key unique (segment_type, segment, stage_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "funnel_segments.overall_rate: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.19214566654022003 max=0.51058352402746"
+      },
+      {
+        "check": "funnel_segments.rate: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.17222222222222222 max=0.5193687230989957"
+      },
+      {
+        "check": "funnel_segments: ci_low \u2264 rate \u2264 ci_high",
+        "passed": true,
+        "detail": "violations=0"
+      },
+      {
+        "check": "funnel_segments.n_entering: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_segments.n_converted: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_segments.clearly_different: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_segments: no causal wording in an observational table",
+        "passed": true,
+        "detail": "hits=[]"
+      },
+      {
+        "check": "retention_cohorts: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_cohorts: not empty",
+        "passed": true,
+        "detail": "rows=25944"
+      },
+      {
+        "check": "retention_cohorts: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_cohorts: primary key unique (cohort_week, source_raw, device, country_group, age_week)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "retention_cohorts.cohort_size: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_cohorts.active_users: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_cohorts.is_fully_observed: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_cohorts: no causal wording in an observational table",
+        "passed": true,
+        "detail": "hits=[]"
+      },
+      {
+        "check": "retention_rates: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_rates: not empty",
+        "passed": true,
+        "detail": "rows=19"
+      },
+      {
+        "check": "retention_rates: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_rates: primary key unique (window, segment_type, segment)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "retention_rates.rate: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.00670938433750592 max=0.10941990420436402"
+      },
+      {
+        "check": "retention_rates: ci_low \u2264 rate \u2264 ci_high",
+        "passed": true,
+        "detail": "violations=0"
+      },
+      {
+        "check": "retention_rates.eligible: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_rates.returned: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_rates: no causal wording in an observational table",
+        "passed": true,
+        "detail": "hits=[]"
+      },
+      {
+        "check": "retention_tests: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_tests: not empty",
+        "passed": true,
+        "detail": "rows=8"
+      },
+      {
+        "check": "retention_tests: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_tests: primary key unique (test_type, dimension, metric, age_week)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "retention_tests.n_groups: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_tests: no causal wording in an observational table",
+        "passed": true,
+        "detail": "hits=[]"
+      },
+      {
+        "check": "behaviour_groups: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_groups: not empty",
+        "passed": true,
+        "detail": "rows=12109"
+      },
+      {
+        "check": "behaviour_groups: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_groups: primary key unique (cohort_week, source_raw, device, country_group, behaviour_key, did_it)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "behaviour_groups.users: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_groups.returned: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_groups: no causal wording in an observational table",
+        "passed": true,
+        "detail": "hits=[]"
+      },
+      {
+        "check": "behaviour_model: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_model: not empty",
+        "passed": true,
+        "detail": "rows=23"
+      },
+      {
+        "check": "behaviour_model: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_model: primary key unique (model, feature)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "behaviour_model: or_ci_low \u2264 odds_ratio \u2264 or_ci_high",
+        "passed": true,
+        "detail": "violations=0"
+      },
+      {
+        "check": "behaviour_model: no causal wording in an observational table",
+        "passed": true,
+        "detail": "hits=[]"
+      },
+      {
+        "check": "followup_test_design: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "followup_test_design: not empty",
+        "passed": true,
+        "detail": "rows=2"
+      },
+      {
+        "check": "followup_test_design: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "followup_test_design: primary key unique (mde_pp)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "followup_test_design.baseline_rate: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.08143834843979082 max=0.08143834843979082"
+      },
+      {
+        "check": "followup_test_design.n_per_arm: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "followup_test_design.enrolment_days: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "followup_test_design.total_days: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_arms: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_arms: not empty",
+        "passed": true,
+        "detail": "rows=2"
+      },
+      {
+        "check": "game_arms: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_arms: primary key unique (variant)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "game_arms.d1_rate: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.44228274967574577 max=0.4481879194630872"
+      },
+      {
+        "check": "game_arms.d7_rate: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.18200004396667327 max=0.19020134228187918"
+      },
+      {
+        "check": "game_arms.players: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_arms.d1_retained: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_arms.d7_retained: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_effects: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_effects: not empty",
+        "passed": true,
+        "detail": "rows=7"
+      },
+      {
+        "check": "game_effects: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_effects: primary key unique (metric_key, method)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "game_effects: ci_low \u2264 estimate \u2264 ci_high",
+        "passed": true,
+        "detail": "violations=0"
+      },
+      {
+        "check": "game_checks: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_checks: not empty",
+        "passed": true,
+        "detail": "rows=7"
+      },
+      {
+        "check": "game_checks: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_checks: primary key unique (check_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "game_power_curve: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_power_curve: not empty",
+        "passed": true,
+        "detail": "rows=40"
+      },
+      {
+        "check": "game_power_curve: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_power_curve: primary key unique (effect_pp)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "game_power_curve.power: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.06689673530208264 max=0.9999999854599521"
+      },
+      {
+        "check": "email_arms: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_arms: not empty",
+        "passed": true,
+        "detail": "rows=9"
+      },
+      {
+        "check": "email_arms: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_arms: primary key unique (arm, metric_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "email_arms: ci_low \u2264 value \u2264 ci_high",
+        "passed": true,
+        "detail": "violations=0"
+      },
+      {
+        "check": "email_arms.customers: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_arms.events: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_effects: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_effects: not empty",
+        "passed": true,
+        "detail": "rows=6"
+      },
+      {
+        "check": "email_effects: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_effects: primary key unique (arm, metric_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "email_effects: ci_low \u2264 estimate \u2264 ci_high",
+        "passed": true,
+        "detail": "violations=0"
+      },
+      {
+        "check": "email_subgroups: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_subgroups: not empty",
+        "passed": true,
+        "detail": "rows=44"
+      },
+      {
+        "check": "email_subgroups: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_subgroups: primary key unique (arm, covariate, level)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "email_subgroups.rate_control: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.0029525323642970703 max=0.014423076923076924"
+      },
+      {
+        "check": "email_subgroups.rate_treatment: within [0, 1]",
+        "passed": true,
+        "detail": "min=0.006131781334441904 max=0.02570093457943925"
+      },
+      {
+        "check": "email_subgroups: ci_low_pp \u2264 estimate_pp \u2264 ci_high_pp",
+        "passed": true,
+        "detail": "violations=0"
+      },
+      {
+        "check": "email_subgroups.n_treatment: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_subgroups.n_control: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_subgroups.survives_holm: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_interactions: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_interactions: not empty",
+        "passed": true,
+        "detail": "rows=24"
+      },
+      {
+        "check": "email_interactions: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_interactions: primary key unique (outcome, arm, covariate)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "email_interactions.real_difference: non-negative",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_checks: columns match schema",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_checks: not empty",
+        "passed": true,
+        "detail": "rows=4"
+      },
+      {
+        "check": "email_checks: key columns have no nulls",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_checks: primary key unique (check_key)",
+        "passed": true,
+        "detail": "duplicates=0"
+      },
+      {
+        "check": "store_daily.funnel_eligible total = published strict funnel 'first_visit'",
+        "passed": true,
+        "detail": "export=238621 published=238621"
+      },
+      {
+        "check": "store_daily.viewed_product total = published strict funnel 'view_item'",
+        "passed": true,
+        "detail": "export=50087 published=50087"
+      },
+      {
+        "check": "store_daily.added_to_cart total = published strict funnel 'add_to_cart'",
+        "passed": true,
+        "detail": "export=9624 published=9624"
+      },
+      {
+        "check": "store_daily.started_checkout total = published strict funnel 'begin_checkout'",
+        "passed": true,
+        "detail": "export=3496 published=3496"
+      },
+      {
+        "check": "store_daily.purchased total = published strict funnel 'purchase'",
+        "passed": true,
+        "detail": "export=1785 published=1785"
+      },
+      {
+        "check": "store_daily.d7_eligible total = published d7_window n",
+        "passed": true,
+        "detail": "export=238621 published=238621"
+      },
+      {
+        "check": "store_daily.d7_returned total = published d7_window returned",
+        "passed": true,
+        "detail": "export=18741 published=18741"
+      },
+      {
+        "check": "store_daily.d7_eligible total = published d7_exact_day n",
+        "passed": true,
+        "detail": "export=238621 published=238621"
+      },
+      {
+        "check": "store_daily.d7_exact_returned total = published d7_exact_day returned",
+        "passed": true,
+        "detail": "export=1601 published=1601"
+      },
+      {
+        "check": "store_daily.d30_eligible total = published d30_window n",
+        "passed": true,
+        "detail": "export=170386 published=170386"
+      },
+      {
+        "check": "store_daily.d30_returned total = published d30_window returned",
+        "passed": true,
+        "detail": "export=18010 published=18010"
+      },
+      {
+        "check": "store_daily d7 by source_raw = published d7_by_channel",
+        "passed": true,
+        "detail": "export={'(obfuscated)': (43114, 3293), 'Direct': (56878, 4538), 'Organic Search': (91538, 7233), 'Paid Search': (13045, 1042), 'Referral': (34046, 2635)} published={'(obfuscated)': (43114, 3293), 'Direct': (56878, 4538), 'Organic Search': (91538, 7233), 'Paid Search': (13045, 1042), 'Referral': (34046, 2635)}"
+      },
+      {
+        "check": "store_daily d7 by device = published d7_by_device",
+        "passed": true,
+        "detail": "export={'desktop': (138609, 10862), 'mobile': (94662, 7450), 'tablet': (5350, 429)} published={'desktop': (138609, 10862), 'mobile': (94662, 7450), 'tablet': (5350, 429)}"
+      },
+      {
+        "check": "store_daily.new_visitors total = new non-bot users",
+        "passed": true,
+        "detail": "export=257285 published=257285"
+      },
+      {
+        "check": "store_daily: funnel counts never increase along the funnel (every row)",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "store_daily: eligible \u2264 new_visitors and returned \u2264 eligible (every row)",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_daily_long totals = published strict funnel (no row multiplication)",
+        "passed": true,
+        "detail": "export={'add_to_cart': 9624, 'begin_checkout': 3496, 'first_visit': 238621, 'purchase': 1785, 'view_item': 50087}"
+      },
+      {
+        "check": "funnel_daily_long rows = 5 \u00d7 non-empty store_daily rows",
+        "passed": true,
+        "detail": "export=54110 published=54110"
+      },
+      {
+        "check": "funnel_steps[strict] users = published",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_steps[any] users = published",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_steps: exactly one largest drop per order type",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "funnel_segments rows = published segment_funnel",
+        "passed": true,
+        "detail": "export=56 published=56"
+      },
+      {
+        "check": "funnel_segments: rate = n_converted / n_entering",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_cohorts: same cohort \u00d7 age cells as published",
+        "passed": true,
+        "detail": "cells export=168 published=168"
+      },
+      {
+        "check": "retention_cohorts: summed sizes/actives/observability = published cohort matrix",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_cohorts: active_users \u2264 cohort_size",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_cohorts: cohort sizes (age 1) = new non-bot users",
+        "passed": true,
+        "detail": "export=257285 published=257285"
+      },
+      {
+        "check": "retention_cohorts: cohort_size constant across ages within a cell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "retention_rates: rate = returned / eligible",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_groups[added_to_cart] users = published driver population",
+        "passed": true,
+        "detail": "export=168471 published=168471"
+      },
+      {
+        "check": "behaviour_groups[added_to_cart] return rate = published outcome rate",
+        "passed": true,
+        "detail": "export=np.float64(0.08143834843979082) published=0.08143834843979082"
+      },
+      {
+        "check": "behaviour_groups[engaged_1min] users = published driver population",
+        "passed": true,
+        "detail": "export=168471 published=168471"
+      },
+      {
+        "check": "behaviour_groups[engaged_1min] return rate = published outcome rate",
+        "passed": true,
+        "detail": "export=np.float64(0.08143834843979082) published=0.08143834843979082"
+      },
+      {
+        "check": "behaviour_groups[pages_3plus] users = published driver population",
+        "passed": true,
+        "detail": "export=168471 published=168471"
+      },
+      {
+        "check": "behaviour_groups[pages_3plus] return rate = published outcome rate",
+        "passed": true,
+        "detail": "export=np.float64(0.08143834843979082) published=0.08143834843979082"
+      },
+      {
+        "check": "behaviour_groups[used_search] users = published driver population",
+        "passed": true,
+        "detail": "export=168471 published=168471"
+      },
+      {
+        "check": "behaviour_groups[used_search] return rate = published outcome rate",
+        "passed": true,
+        "detail": "export=np.float64(0.08143834843979082) published=0.08143834843979082"
+      },
+      {
+        "check": "behaviour_groups[viewed_product] users = published driver population",
+        "passed": true,
+        "detail": "export=168471 published=168471"
+      },
+      {
+        "check": "behaviour_groups[viewed_product] return rate = published outcome rate",
+        "passed": true,
+        "detail": "export=np.float64(0.08143834843979082) published=0.08143834843979082"
+      },
+      {
+        "check": "behaviour_groups[added_to_cart, did_it=1] = published descriptive",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_groups[added_to_cart, did_it=0] = published descriptive",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_groups[used_search, did_it=1] = published descriptive",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_groups[used_search, did_it=0] = published descriptive",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "behaviour_model: main odds ratios = published logit",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "followup_test_design rows = published designs",
+        "passed": true,
+        "detail": "export=2 published=2"
+      },
+      {
+        "check": "game_arms: players gate_30 = published n",
+        "passed": true,
+        "detail": "export=44700 published=44700"
+      },
+      {
+        "check": "game_arms: players gate_40 = published n",
+        "passed": true,
+        "detail": "export=45489 published=45489"
+      },
+      {
+        "check": "game_arms: total players = raw rows",
+        "passed": true,
+        "detail": "export=90189 published=90189"
+      },
+      {
+        "check": "game_arms: d7 control rate = published",
+        "passed": true,
+        "detail": "export=np.float64(0.19020134228187918) published=0.19020134228187918"
+      },
+      {
+        "check": "game_arms: d7 treatment rate = published",
+        "passed": true,
+        "detail": "export=np.float64(0.18200004396667327) published=0.18200004396667327"
+      },
+      {
+        "check": "game_arms: d1 control rate = published",
+        "passed": true,
+        "detail": "export=np.float64(0.4481879194630872) published=0.4481879194630872"
+      },
+      {
+        "check": "game_arms: d1 treatment rate = published",
+        "passed": true,
+        "detail": "export=np.float64(0.44228274967574577) published=0.44228274967574577"
+      },
+      {
+        "check": "game_effects primary estimate = published (pp)",
+        "passed": true,
+        "detail": "export=np.float64(-0.8201298315205913) published=-0.8201298315205913"
+      },
+      {
+        "check": "game_effects primary ci_low = published (pp)",
+        "passed": true,
+        "detail": "export=np.float64(-1.3281940871914826) published=-1.3281940871914826"
+      },
+      {
+        "check": "game_effects primary ci_high = published (pp)",
+        "passed": true,
+        "detail": "export=np.float64(-0.31213026887613) published=-0.31213026887613"
+      },
+      {
+        "check": "game_effects primary p-value = published",
+        "passed": true,
+        "detail": "export=np.float64(0.0015542499756143289) published=0.0015542499756143289"
+      },
+      {
+        "check": "game_effects d1 guardrail status = published",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_effects: d7 effect = arm difference",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "game_checks decision = published",
+        "passed": true,
+        "detail": "export='do_not_ship' published='do_not_ship'"
+      },
+      {
+        "check": "game_checks: revenue marked missing",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_arms: customers per arm = published n",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_arms: total customers = raw rows",
+        "passed": true,
+        "detail": "export=64000 published=64000"
+      },
+      {
+        "check": "email_arms: 3 arms \u00d7 3 measures",
+        "passed": true,
+        "detail": "export=9 published=9"
+      },
+      {
+        "check": "email_arms Mens E-Mail conversion = published",
+        "passed": true,
+        "detail": "export=np.float64(0.01253109306800582) published=0.01253109306800582"
+      },
+      {
+        "check": "email_arms control conversion = published",
+        "passed": true,
+        "detail": "export=np.float64(0.005726086548390125) published=0.005726086548390125"
+      },
+      {
+        "check": "email_arms Mens E-Mail visit = published",
+        "passed": true,
+        "detail": "export=np.float64(0.18275684047496127) published=0.18275684047496127"
+      },
+      {
+        "check": "email_arms control visit = published",
+        "passed": true,
+        "detail": "export=np.float64(0.10616727682343002) published=0.10616727682343002"
+      },
+      {
+        "check": "email_arms Mens E-Mail spend mean = published",
+        "passed": true,
+        "detail": "export=np.float64(1.422616511005773) published=1.422616511005773"
+      },
+      {
+        "check": "email_arms Womens E-Mail conversion = published",
+        "passed": true,
+        "detail": "export=np.float64(0.008837144059475383) published=0.008837144059475383"
+      },
+      {
+        "check": "email_arms control conversion = published",
+        "passed": true,
+        "detail": "export=np.float64(0.005726086548390125) published=0.005726086548390125"
+      },
+      {
+        "check": "email_arms Womens E-Mail visit = published",
+        "passed": true,
+        "detail": "export=np.float64(0.151400383410483) published=0.151400383410483"
+      },
+      {
+        "check": "email_arms control visit = published",
+        "passed": true,
+        "detail": "export=np.float64(0.10616727682343002) published=0.10616727682343002"
+      },
+      {
+        "check": "email_arms Womens E-Mail spend mean = published",
+        "passed": true,
+        "detail": "export=np.float64(1.0772015710478329) published=1.0772015710478329"
+      },
+      {
+        "check": "email_effects Mens E-Mail conversion (pp) = published",
+        "passed": true,
+        "detail": "export=np.float64(0.6805006519615695) published=0.6805006519615695"
+      },
+      {
+        "check": "email_effects Mens E-Mail conversion Holm p = published",
+        "passed": true,
+        "detail": "export=np.float64(3.046447001191085e-13) published=3.046447001191085e-13"
+      },
+      {
+        "check": "email_effects Mens E-Mail spend = published bootstrap",
+        "passed": true,
+        "detail": "export=np.float64(0.7698271558945368) published=0.7698271558945368"
+      },
+      {
+        "check": "email_effects Mens E-Mail: conversion = arm difference",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_effects Womens E-Mail conversion (pp) = published",
+        "passed": true,
+        "detail": "export=np.float64(0.3111057511085258) published=0.3111057511085258"
+      },
+      {
+        "check": "email_effects Womens E-Mail conversion Holm p = published",
+        "passed": true,
+        "detail": "export=np.float64(0.00015710512910668448) published=0.00015710512910668448"
+      },
+      {
+        "check": "email_effects Womens E-Mail spend = published bootstrap",
+        "passed": true,
+        "detail": "export=np.float64(0.4244122159365967) published=0.4244122159365967"
+      },
+      {
+        "check": "email_effects Womens E-Mail: conversion = arm difference",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "email_subgroups rows = published",
+        "passed": true,
+        "detail": "export=44 published=44"
+      },
+      {
+        "check": "email_subgroups surviving Holm = published",
+        "passed": true,
+        "detail": "export=17 published=17"
+      },
+      {
+        "check": "email_interactions rows = 2 outcomes \u00d7 12",
+        "passed": true,
+        "detail": "export=24 published=24"
+      },
+      {
+        "check": "overview: product view rate = funnel_steps",
+        "passed": true,
+        "detail": "export=np.float64(0.2099018946362642) published=np.float64(0.2099018946362642)"
+      },
+      {
+        "check": "overview: purchase conversion = funnel_steps",
+        "passed": true,
+        "detail": "export=np.float64(0.00748048160052971) published=np.float64(0.00748048160052971)"
+      },
+      {
+        "check": "overview: D7 return = retention_rates",
+        "passed": true,
+        "detail": "export=np.float64(0.07853877068656992) published=np.float64(0.07853877068656992)"
+      },
+      {
+        "check": "overview: game effect = game_effects",
+        "passed": true,
+        "detail": "export=np.float64(-0.8201298315205913) published=np.float64(-0.8201298315205913)"
+      },
+      {
+        "check": "overview: AOV = published opportunity sizing",
+        "passed": true,
+        "detail": "export=np.float64(69.24286677151201) published=69.24286677151201"
+      },
+      {
+        "check": "overview: observational KPIs never carry experiment datasets",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "dataset_catalog: causal claims only for randomized datasets",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "check": "dataset_catalog: synthetic data marked and not exported",
+        "passed": true,
+        "detail": ""
+      }
+    ]
+  }
+}

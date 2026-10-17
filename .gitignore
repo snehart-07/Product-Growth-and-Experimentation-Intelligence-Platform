@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Credentials and environment (never commit)
+.env
+.env.*
+*.pem
+*.key
+*credentials*.json
+application_default_credentials.json
+service-account*.json
+
+# Raw and intermediate data: regenerate with the Makefile
+data/raw/
+data/processed/
+data/metadata/*
+!data/metadata/.gitkeep
+*.duckdb
+*.duckdb.wal
+*.parquet
+exports/tableau/.hyperlogs/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

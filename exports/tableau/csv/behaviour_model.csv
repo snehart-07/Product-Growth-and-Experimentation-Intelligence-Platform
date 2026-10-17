@@ -1,0 +1,24 @@
+model,feature,label,term_type,odds_ratio,or_ci_low,or_ci_high,p_value,direction,vif
+main,used_search,Used search,behaviour,0.41439006099136705,0.3810503072912935,0.450646855185865,3.7111582130519637e-94,less likely,1.1629241985782037
+main,log_page_views,More pages viewed (per SD),behaviour,1.6241415972667204,1.5730170380835937,1.6769277535517153,4.3211813220695675e-194,more likely,4.617754196443694
+main,log_engagement_min,More time on site (per SD),behaviour,1.299319796008701,1.261945943819078,1.33780051401483,3.281335730310324e-69,more likely,4.193873186288962
+main,added_to_cart,Added to cart,behaviour,0.8553564628575872,0.7921793511931626,0.9235720136485143,6.584042740508621e-05,less likely,1.3290375527672655
+main,log_product_views,More products viewed (per SD),behaviour,0.8927707876624752,0.8716853725438867,0.9143662431519669,1.3893923898247294e-20,less likely,2.916572859015758
+main,country_grp_Germany,Country: Germany (vs United States),country,0.901593557093595,0.7818881616361869,1.039625591071311,0.15407343275537935,no clear link,
+main,channel_(obfuscated),Source: Hidden in sample (vs Google search),source,0.922227540117995,0.8753878151526222,0.9715735369286636,0.0023320643947895912,less likely,
+main,country_grp_China,Country: China (vs United States),country,1.0510210992917717,0.9163971592880886,1.2054220595954683,0.4767362120964501,no clear link,
+main,country_grp_Spain,Country: Spain (vs United States),country,0.9613764273128514,0.8388804464824048,1.1017596593988652,0.5711099083380244,no clear link,
+main,country_grp_India,Country: India (vs United States),country,1.037525717281778,0.9730509506017242,1.1062726092147561,0.26042163537547813,no clear link,
+main,channel_Referral,Source: Link on another site (vs Google search),source,0.9696474110372266,0.9170655140042988,1.0252442027023918,0.27856673588710756,no clear link,
+main,device_tablet,Device: Tablet (vs Desktop),device,1.025661704530149,0.907781115018744,1.1588497653621814,0.6841830938035112,no clear link,
+main,country_grp_France,Country: France (vs United States),country,0.9812583645839382,0.8605398400441939,1.1189115637185327,0.7775830749192657,no clear link,
+main,country_grp_Other,Country: Other (vs United States),country,1.0165217992643845,0.9736039431393051,1.061331535950705,0.4565505218221968,no clear link,
+main,country_grp_United Kingdom,Country: United Kingdom (vs United States),country,0.9855680103286777,0.8868475018487074,1.0952777122993305,0.7871959482110593,no clear link,
+main,device_mobile,Device: Mobile (vs Desktop),device,1.0116652841307068,0.9749005922910738,1.0498164173949847,0.5391717522652856,no clear link,
+main,channel_Direct,Source: Direct (vs Google search),source,0.996855817163847,0.9514824748802256,1.044392877901921,0.8945939576077739,no clear link,
+main,country_grp_Canada,Country: Canada (vs United States),country,0.9970823074263947,0.928684465250945,1.0705176677140846,0.9357695861968057,no clear link,
+main,channel_Paid Search,Source: Search ads (vs Google search),source,0.9987388175318205,0.920779403301243,1.0832988032406312,0.9757211695636266,no clear link,
+intent_adjusted,log_page_views,More pages viewed (per SD),behaviour,1.8031722219804343,1.744459274218705,1.8638612607210805,5.999255884068578e-267,more likely,
+intent_adjusted,used_search,Used search,behaviour,0.4976724110351506,0.45835711755573466,0.5403599490858197,5.021837102492174e-62,less likely,
+intent_adjusted,began_checkout,Began checkout (intent proxy),intent_proxy,0.24287090792141558,0.21449587196496245,0.2749995949768583,2.0594869346309308e-110,less likely,
+intent_adjusted,purchased_24h,Purchased in first 24h (intent proxy),intent_proxy,2.9924532138027726,2.574979988267814,3.4776100309899527,2.250993170160477e-46,more likely,

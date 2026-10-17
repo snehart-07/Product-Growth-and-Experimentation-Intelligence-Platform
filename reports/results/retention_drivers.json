@@ -1,0 +1,417 @@
+{
+  "label": "OBSERVATIONAL ASSOCIATIONS - not causal effects",
+  "n": 168471,
+  "outcome_rate": 0.08143834843979082,
+  "outcome": "any event in [t0+24h, t0+31d)",
+  "population": "new non-bot users with first_visit <= 2021-01-01",
+  "feature_definitions": {
+    "log_product_views": "log1p(view_item count, first 24h)",
+    "log_page_views": "log1p(page_view count, first 24h)",
+    "log_engagement_min": "log1p(engagement minutes, first 24h)",
+    "added_to_cart": "any add_to_cart in first 24h",
+    "used_search": "any view_search_results in first 24h",
+    "channel/device/country": "first-touch / first event"
+  },
+  "design": {
+    "scales_sd_of_log_feature": {
+      "log_product_views": 0.6866186170630072,
+      "log_page_views": 0.7200958449225184,
+      "log_engagement_min": 0.6709261169326677
+    },
+    "reference_levels": [
+      "channel_Organic Search",
+      "device_desktop",
+      "country_grp_United States"
+    ]
+  },
+  "vif": [
+    {
+      "feature": "log_product_views",
+      "vif": 2.916572859015758
+    },
+    {
+      "feature": "log_page_views",
+      "vif": 4.617754196443694
+    },
+    {
+      "feature": "log_engagement_min",
+      "vif": 4.193873186288962
+    },
+    {
+      "feature": "added_to_cart",
+      "vif": 1.3290375527672655
+    },
+    {
+      "feature": "used_search",
+      "vif": 1.1629241985782037
+    }
+  ],
+  "logit_pseudo_r2": 0.07054512422022896,
+  "logit": [
+    {
+      "feature": "used_search",
+      "coef": -0.8809475724186782,
+      "odds_ratio": 0.41439006099136705,
+      "or_ci_low": 0.3810503072912935,
+      "or_ci_high": 0.450646855185865,
+      "p_value": 3.7111582130519637e-94,
+      "abs_log_or": 0.8809475724186782
+    },
+    {
+      "feature": "log_page_views",
+      "coef": 0.48497942837379376,
+      "odds_ratio": 1.6241415972667204,
+      "or_ci_low": 1.5730170380835937,
+      "or_ci_high": 1.6769277535517153,
+      "p_value": 4.3211813220695675e-194,
+      "abs_log_or": 0.48497942837379376
+    },
+    {
+      "feature": "log_engagement_min",
+      "coef": 0.26184089369343694,
+      "odds_ratio": 1.299319796008701,
+      "or_ci_low": 1.261945943819078,
+      "or_ci_high": 1.33780051401483,
+      "p_value": 3.281335730310324e-69,
+      "abs_log_or": 0.26184089369343694
+    },
+    {
+      "feature": "added_to_cart",
+      "coef": -0.15623698130763788,
+      "odds_ratio": 0.8553564628575872,
+      "or_ci_low": 0.7921793511931626,
+      "or_ci_high": 0.9235720136485143,
+      "p_value": 6.584042740508621e-05,
+      "abs_log_or": 0.15623698130763788
+    },
+    {
+      "feature": "log_product_views",
+      "coef": -0.11342540780250074,
+      "odds_ratio": 0.8927707876624752,
+      "or_ci_low": 0.8716853725438867,
+      "or_ci_high": 0.9143662431519669,
+      "p_value": 1.3893923898247294e-20,
+      "abs_log_or": 0.11342540780250074
+    },
+    {
+      "feature": "country_grp_Germany",
+      "coef": -0.1035914623628547,
+      "odds_ratio": 0.901593557093595,
+      "or_ci_low": 0.7818881616361869,
+      "or_ci_high": 1.039625591071311,
+      "p_value": 0.15407343275537935,
+      "abs_log_or": 0.1035914623628547
+    },
+    {
+      "feature": "channel_(obfuscated)",
+      "coef": -0.08096329615728602,
+      "odds_ratio": 0.922227540117995,
+      "or_ci_low": 0.8753878151526222,
+      "or_ci_high": 0.9715735369286636,
+      "p_value": 0.0023320643947895912,
+      "abs_log_or": 0.08096329615728602
+    },
+    {
+      "feature": "country_grp_China",
+      "coef": 0.049762167137426545,
+      "odds_ratio": 1.0510210992917717,
+      "or_ci_low": 0.9163971592880886,
+      "or_ci_high": 1.2054220595954683,
+      "p_value": 0.4767362120964501,
+      "abs_log_or": 0.049762167137426545
+    },
+    {
+      "feature": "country_grp_Spain",
+      "coef": -0.03938924294826399,
+      "odds_ratio": 0.9613764273128514,
+      "or_ci_low": 0.8388804464824048,
+      "or_ci_high": 1.1017596593988652,
+      "p_value": 0.5711099083380244,
+      "abs_log_or": 0.03938924294826399
+    },
+    {
+      "feature": "country_grp_India",
+      "coef": 0.036838760556978205,
+      "odds_ratio": 1.037525717281778,
+      "or_ci_low": 0.9730509506017242,
+      "or_ci_high": 1.1062726092147561,
+      "p_value": 0.26042163537547813,
+      "abs_log_or": 0.036838760556978205
+    },
+    {
+      "feature": "channel_Referral",
+      "coef": -0.030822767340639705,
+      "odds_ratio": 0.9696474110372266,
+      "or_ci_low": 0.9170655140042988,
+      "or_ci_high": 1.0252442027023918,
+      "p_value": 0.27856673588710756,
+      "abs_log_or": 0.030822767340639705
+    },
+    {
+      "feature": "device_tablet",
+      "coef": 0.025337969697936547,
+      "odds_ratio": 1.025661704530149,
+      "or_ci_low": 0.907781115018744,
+      "or_ci_high": 1.1588497653621814,
+      "p_value": 0.6841830938035112,
+      "abs_log_or": 0.025337969697936547
+    },
+    {
+      "feature": "country_grp_France",
+      "coef": -0.018919485505099153,
+      "odds_ratio": 0.9812583645839382,
+      "or_ci_low": 0.8605398400441939,
+      "or_ci_high": 1.1189115637185327,
+      "p_value": 0.7775830749192657,
+      "abs_log_or": 0.018919485505099153
+    },
+    {
+      "feature": "country_grp_Other",
+      "coef": 0.016386799271350956,
+      "odds_ratio": 1.0165217992643845,
+      "or_ci_low": 0.9736039431393051,
+      "or_ci_high": 1.061331535950705,
+      "p_value": 0.4565505218221968,
+      "abs_log_or": 0.016386799271350956
+    },
+    {
+      "feature": "country_grp_United Kingdom",
+      "coef": -0.014537143782507131,
+      "odds_ratio": 0.9855680103286777,
+      "or_ci_low": 0.8868475018487074,
+      "or_ci_high": 1.0952777122993305,
+      "p_value": 0.7871959482110593,
+      "abs_log_or": 0.014537143782507131
+    },
+    {
+      "feature": "device_mobile",
+      "coef": 0.011597769250036033,
+      "odds_ratio": 1.0116652841307068,
+      "or_ci_low": 0.9749005922910738,
+      "or_ci_high": 1.0498164173949847,
+      "p_value": 0.5391717522652856,
+      "abs_log_or": 0.011597769250036033
+    },
+    {
+      "feature": "channel_Direct",
+      "coef": -0.0031491361645116403,
+      "odds_ratio": 0.996855817163847,
+      "or_ci_low": 0.9514824748802256,
+      "or_ci_high": 1.044392877901921,
+      "p_value": 0.8945939576077739,
+      "abs_log_or": 0.0031491361645116403
+    },
+    {
+      "feature": "country_grp_Canada",
+      "coef": -0.0029219573361130356,
+      "odds_ratio": 0.9970823074263947,
+      "or_ci_low": 0.928684465250945,
+      "or_ci_high": 1.0705176677140846,
+      "p_value": 0.9357695861968057,
+      "abs_log_or": 0.0029219573361130356
+    },
+    {
+      "feature": "channel_Paid Search",
+      "coef": -0.0012619784280927197,
+      "odds_ratio": 0.9987388175318205,
+      "or_ci_low": 0.920779403301243,
+      "or_ci_high": 1.0832988032406312,
+      "p_value": 0.9757211695636266,
+      "abs_log_or": 0.0012619784280927197
+    }
+  ],
+  "model_comparison": {
+    "holdout_n": 50542,
+    "auc_logistic": 0.6909502251029958,
+    "auc_gradient_boosting": 0.7156597045646945,
+    "gb_permutation_importance": [
+      {
+        "feature": "log_page_views",
+        "auc_drop_mean": 0.15264587388709183,
+        "auc_drop_sd": 0.010241128088466224
+      },
+      {
+        "feature": "log_engagement_min",
+        "auc_drop_mean": 0.030445805827155992,
+        "auc_drop_sd": 0.0022096378335234473
+      },
+      {
+        "feature": "used_search",
+        "auc_drop_mean": 0.0042497518130687915,
+        "auc_drop_sd": 0.0014427010469159423
+      },
+      {
+        "feature": "log_product_views",
+        "auc_drop_mean": 0.003182697872671736,
+        "auc_drop_sd": 0.0004981202790802542
+      },
+      {
+        "feature": "added_to_cart",
+        "auc_drop_mean": 0.0023136238272702726,
+        "auc_drop_sd": 0.0004450659930529282
+      },
+      {
+        "feature": "country_grp_Other",
+        "auc_drop_mean": 0.0004916046992819556,
+        "auc_drop_sd": 0.00012233835383818075
+      },
+      {
+        "feature": "channel_Direct",
+        "auc_drop_mean": 0.0002997617902248173,
+        "auc_drop_sd": 0.00011543509274722088
+      },
+      {
+        "feature": "country_grp_China",
+        "auc_drop_mean": 0.00015396117934136645,
+        "auc_drop_sd": 6.496988640149773e-05
+      },
+      {
+        "feature": "country_grp_India",
+        "auc_drop_mean": 0.000132066082720228,
+        "auc_drop_sd": 7.367041133182046e-05
+      },
+      {
+        "feature": "country_grp_Canada",
+        "auc_drop_mean": 0.00012569395053163568,
+        "auc_drop_sd": 0.00015230127773609628
+      },
+      {
+        "feature": "device_tablet",
+        "auc_drop_mean": 0.00010495140172839257,
+        "auc_drop_sd": 0.00021176462986156284
+      },
+      {
+        "feature": "country_grp_Spain",
+        "auc_drop_mean": 1.6384063376961856e-05,
+        "auc_drop_sd": 0.0001039892103414852
+      }
+    ]
+  },
+  "top_behaviour": "log_page_views",
+  "strongest_absolute_association": "used_search",
+  "strongest_absolute_or": {
+    "feature": "used_search",
+    "coef": -0.8809475724186782,
+    "odds_ratio": 0.41439006099136705,
+    "or_ci_low": 0.3810503072912935,
+    "or_ci_high": 0.450646855185865,
+    "p_value": 3.7111582130519637e-94,
+    "abs_log_or": 0.8809475724186782
+  },
+  "strongest_absolute_or_intent_adjusted": {
+    "feature": "used_search",
+    "coef": -0.6978132275752258,
+    "odds_ratio": 0.4976724110351506,
+    "or_ci_low": 0.45835711755573466,
+    "or_ci_high": 0.5403599490858197,
+    "p_value": 5.021837102492174e-62,
+    "abs_log_or": 0.6978132275752258
+  },
+  "intent_adjusted_top_or": {
+    "feature": "log_page_views",
+    "coef": 0.589547459338021,
+    "odds_ratio": 1.8031722219804343,
+    "or_ci_low": 1.744459274218705,
+    "or_ci_high": 1.8638612607210805,
+    "p_value": 5.999255884068578e-267,
+    "abs_log_or": 0.589547459338021
+  },
+  "unadjusted_top_or": {
+    "feature": "log_page_views",
+    "coef": 0.48497942837379376,
+    "odds_ratio": 1.6241415972667204,
+    "or_ci_low": 1.5730170380835937,
+    "or_ci_high": 1.6769277535517153,
+    "p_value": 4.3211813220695675e-194,
+    "abs_log_or": 0.48497942837379376
+  },
+  "intent_proxies_or": [
+    {
+      "feature": "began_checkout",
+      "coef": -1.415225219922958,
+      "odds_ratio": 0.24287090792141558,
+      "or_ci_low": 0.21449587196496245,
+      "or_ci_high": 0.2749995949768583,
+      "p_value": 2.0594869346309308e-110,
+      "abs_log_or": 1.415225219922958
+    },
+    {
+      "feature": "purchased_24h",
+      "coef": 1.0960935238424823,
+      "odds_ratio": 2.9924532138027726,
+      "or_ci_low": 2.574979988267814,
+      "or_ci_high": 3.4776100309899527,
+      "p_value": 2.250993170160477e-46,
+      "abs_log_or": 1.0960935238424823
+    }
+  ],
+  "binary_descriptives": {
+    "added_to_cart": {
+      "returned_if_1": {
+        "n": 6796,
+        "x": 1341,
+        "rate": 0.19732195409064154,
+        "ci_low": 0.18803214321392556,
+        "ci_high": 0.20695375095521626
+      },
+      "returned_if_0": {
+        "n": 161675,
+        "x": 12379,
+        "rate": 0.07656718725838875,
+        "ci_low": 0.07528108805337191,
+        "ci_high": 0.07787340783115912
+      }
+    },
+    "used_search": {
+      "returned_if_1": {
+        "n": 8326,
+        "x": 901,
+        "rate": 0.10821522940187366,
+        "ci_low": 0.10172226217274456,
+        "ci_high": 0.11506955406385856
+      },
+      "returned_if_0": {
+        "n": 160145,
+        "x": 12819,
+        "rate": 0.08004620812388773,
+        "ci_low": 0.07872719862535521,
+        "ci_high": 0.08138536432074653
+      }
+    }
+  },
+  "follow_up_experiment": {
+    "candidate_behaviour": "log_page_views",
+    "hypothesis": "Adding a 'continue browsing' module (related collections) to landing pages increases first-visit page depth and, through it, 30-day return among new visitors.",
+    "randomization_unit": "user_pseudo_id (new visitors at first_visit), 50/50",
+    "primary_metric": "return within [t0+24h, t0+31d) (same definition as the driver model)",
+    "secondary_metrics": [
+      "log_page_views in first 24h (manipulation check)",
+      "add-to-cart in first 24h",
+      "7-day purchase conversion"
+    ],
+    "guardrails": [
+      "7-day purchase conversion (non-inferiority, margin 0.1 pp)",
+      "page load time",
+      "bounce rate (single-event sessions)"
+    ],
+    "baseline_rate": 0.08143834843979082,
+    "alpha": 0.05,
+    "power": 0.8,
+    "observed_new_users_per_day": 2796.5760869565215,
+    "designs": [
+      {
+        "mde_pp_absolute": 0.5,
+        "n_per_arm": 48272,
+        "enrolment_days_at_observed_traffic": 35,
+        "total_duration_days": 66
+      },
+      {
+        "mde_pp_absolute": 1.0,
+        "n_per_arm": 12387,
+        "enrolment_days_at_observed_traffic": 9,
+        "total_duration_days": 40
+      }
+    ],
+    "note": "Sample sizes from statsmodels NormalIndPower (Cohen's h). Duration adds the 31-day outcome window."
+  }
+}

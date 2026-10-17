@@ -1,0 +1,8 @@
+check_key,check,value,threshold,status,detail
+srm,Sample-ratio mismatch (expected 50/50),0.008607987810836243,0.001,note,"44,700 vs 45,489; chi-square 6.90. Pre-set flag threshold 0.001."
+duplicates,Duplicate player IDs,0.0,0.0,pass,Every player should appear once
+outliers,Players above the 99.9th percentile of rounds,91.0,1073.6240000000107,info,"Max 49,854 rounds; capped for the guardrail mean"
+mde,Minimum detectable effect at 80% power (pts),0.7376150061811748,,info,Not observed power
+n_for_0_5pp,Players per arm to detect 0.5 pts,95734.0,,info,For the next test
+decision,Decision (rule fixed before analysis),,,do_not_ship,gate_40 lowered D7 retention (CI entirely below 0). Keep the gate at level 30. This is the failed-experiment case.
+revenue,Revenue guardrail,,,missing,Revenue / in-app purchases are not in the data; gate placement drives monetisation.

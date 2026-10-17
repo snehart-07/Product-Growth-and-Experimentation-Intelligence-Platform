@@ -1,0 +1,14 @@
+metric_key,section,label,value,unit,ci_low,ci_high,numerator,denominator,dataset_key,nature,interpretation
+new_visitors,Funnel,Funnel-eligible new visitors,238621.0,count,,,,,ga4,observational,
+product_view_rate,Funnel,Viewed a product within 7 days,0.2099018946362642,proportion,0.2082726073339968,0.21154052212221833,50087.0,238621.0,ga4,observational,
+cart_rate,Funnel,Added to cart within 7 days,0.04033173945294002,proportion,,,9624.0,238621.0,ga4,observational,
+purchase_conversion,Funnel,Purchased within 7 days,0.00748048160052971,proportion,,,1785.0,238621.0,ga4,observational,
+largest_drop_rate,Funnel,Left at the largest drop (Viewed product),0.7900981053637358,proportion,,,188534.0,,ga4,observational,Largest absolute loss of any funnel step
+avg_order_value,Funnel,Average order value (distinct transactions),69.24286677151201,USD,,,,4451.0,ga4,observational,Input for what-if scenarios only; revenue in this sample is altered for privacy
+return_d7,Retention,Returned within 7 days,0.07853877068656992,proportion,0.07746616292576267,0.07962494808201395,18741.0,238621.0,ga4,observational,
+return_d30,Retention,Returned within 30 days,0.10570117263155424,proportion,0.10425018763139848,0.1071699366576826,18010.0,170386.0,ga4,observational,
+return_after_24h,Drivers,Returned within a month (after day one),0.08143834843979082,proportion,,,,168471.0,ga4,observational,
+top_positive_or,Drivers,Strongest positive association: pages viewed (OR per SD),1.6241415972667204,odds ratio,1.5730170380835937,1.6769277535517153,,,ga4,observational,"Association, not causation"
+game_d7_effect,Game,"Day-7 retention change, level 40 − level 30",-0.8201298315205913,percentage points,-1.3281940871914826,-0.31213026887613,,,cookie_cats,randomized experiment,gate_40 lowered D7 retention (CI entirely below 0). Keep the gate at level 30. This is the failed-experiment case.
+email_mens_conversion,Email,Men's email: conversion lift vs no email,0.6805006519615695,percentage points,0.5014344671481533,0.8640723396917827,,,hillstrom,randomized experiment,
+email_womens_conversion,Email,Women's email: conversion lift vs no email,0.3111057511085258,percentage points,0.15016571318770086,0.474547131367293,,,hillstrom,randomized experiment,

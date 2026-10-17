@@ -1,0 +1,8 @@
+metric_key,metric,role,method,estimate,ci_low,ci_high,unit,relative_change,p_value,ni_margin,status,interpretation
+game_d7,Day-7 retention,primary,Newcombe hybrid score CI; two-proportion z-test,-0.8201298315205913,-1.3281940871914826,-0.31213026887613,percentage points,-0.043119034896460164,0.0015542499756143289,,clearly worse,Level 40 lowered day-7 retention; the whole interval is below zero
+game_d7,Day-7 retention,robustness,"Bootstrap percentile CI (10,000)",-0.8201298315205913,-1.332038938980898,-0.3159156037575867,percentage points,-0.043119034896460164,0.0015542499756143289,,clearly worse,
+game_d1,Day-1 retention,guardrail,Newcombe CI; non-inferiority vs margin,-0.5905169787341458,-1.2391904992707325,0.058209506975222605,percentage points,-0.01317565585974659,0.07440965529691913,-1.0,not pass,"Lower bound is below the −1.0 pt margin, so non-inferiority is not shown"
+game_d1,Day-1 retention,robustness,"Bootstrap percentile CI (10,000)",-0.5905169787341458,-1.2448322597645436,0.048657478369655074,percentage points,-0.01317565585974659,0.07440965529691913,,unclear,
+game_rounds,Rounds played,guardrail,"Winsorized mean difference, bootstrap CI; non-inferiority",-0.09564444917356241,-1.3693487269951505,1.1678047791375425,rounds,,0.05020880772044255,-2.5,pass,Mann-Whitney U p-value shown
+game_rounds,Rounds played,robustness,"Raw mean difference, bootstrap CI",-1.157488453953249,-4.10003485041225,1.0057810089717119,rounds,,,,unclear,
+game_rounds,Rounds played,robustness,"Median difference, bootstrap CI (2,000)",-1.0,-1.0,0.0,rounds,,0.05020880772044255,,unclear,Mann-Whitney U p-value shown

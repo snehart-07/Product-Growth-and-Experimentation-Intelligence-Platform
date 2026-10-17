@@ -1,0 +1,25 @@
+outcome,arm,arm_label,covariate,covariate_label,lr_stat,dof,p_value,p_holm,p_bh,real_difference
+conversion,Mens E-Mail,Men's email,recency_grp,Months since last purchase,5.718396618412953,3,0.12614418882240852,1.0,0.30274605317378045,0
+conversion,Mens E-Mail,Men's email,history_segment,Spent last year,3.362828955137047,6,0.7621211376436847,1.0,0.8703741173708772,0
+conversion,Mens E-Mail,Men's email,newbie,New vs returning,4.90487190220847,1,0.026781037937623115,0.29459141731385424,0.13107500965409025,0
+conversion,Mens E-Mail,Men's email,zip_code,Area,1.916532827210176,2,0.3835572395637353,1.0,0.6575266963949747,0
+conversion,Mens E-Mail,Men's email,channel,Past shopping channel,0.45168703357740014,2,0.7978429409233041,1.0,0.8703741173708772,0
+conversion,Mens E-Mail,Men's email,product_line,Bought last year,0.6208237154023664,2,0.7331449426445374,1.0,0.8703741173708772,0
+conversion,Womens E-Mail,Women's email,recency_grp,Months since last purchase,3.627988336991166,3,0.3045378892752605,1.0,0.609075778550521,0
+conversion,Womens E-Mail,Women's email,history_segment,Spent last year,13.732706147442968,6,0.03276875241352256,0.3276875241352256,0.13107500965409025,0
+conversion,Womens E-Mail,Women's email,newbie,New vs returning,10.387814265656743,1,0.0012684969574615391,0.01522196348953847,0.01522196348953847,1
+conversion,Womens E-Mail,Women's email,zip_code,Area,0.2613451307965988,2,0.877505052873497,1.0,0.877505052873497,0
+conversion,Womens E-Mail,Women's email,channel,Past shopping channel,1.6405625797779066,2,0.4403077829575355,1.0,0.6604616744363032,0
+conversion,Womens E-Mail,Women's email,product_line,Bought last year,5.178264587019385,2,0.07508516371102243,0.6757664733992019,0.2252554911330673,0
+visit,Mens E-Mail,Men's email,recency_grp,Months since last purchase,3.674057753618399,3,0.29887909238281896,1.0,0.36863667275493195,0
+visit,Mens E-Mail,Men's email,history_segment,Spent last year,5.145874413668935,6,0.5252445580710683,1.0,0.5252445580710683,0
+visit,Mens E-Mail,Men's email,newbie,New vs returning,12.23102025280241,1,0.0004700149007378724,0.004700149007378724,0.0018800596029514896,1
+visit,Mens E-Mail,Men's email,zip_code,Area,7.174940954690101,2,0.02766822939353752,0.19367760575476264,0.05533645878707504,0
+visit,Mens E-Mail,Men's email,channel,Past shopping channel,4.616758427444438,2,0.09942226328163623,0.5965335796898174,0.17043816562566208,0
+visit,Mens E-Mail,Men's email,product_line,Bought last year,2.3605306069584913,2,0.30719722729577664,1.0,0.36863667275493195,0
+visit,Womens E-Mail,Women's email,recency_grp,Months since last purchase,9.932582219295,3,0.019147990654528317,0.15318392523622654,0.04595517757086796,0
+visit,Womens E-Mail,Women's email,history_segment,Spent last year,10.173182592290686,6,0.11754583685788383,0.5965335796898174,0.17631875528682575,0
+visit,Womens E-Mail,Women's email,newbie,New vs returning,16.268614558601257,1,5.496690693925969e-05,0.0006046359763318566,0.00032980144163555816,1
+visit,Womens E-Mail,Women's email,zip_code,Area,10.618962489756086,2,0.004944491032545181,0.04450041929290663,0.014833473097635542,1
+visit,Womens E-Mail,Women's email,channel,Past shopping channel,2.112223822852684,2,0.34780548333128997,1.0,0.3794241636341345,0
+visit,Womens E-Mail,Women's email,product_line,Bought last year,70.46452806308662,2,4.99829800937957e-16,5.9979576112554845e-15,5.9979576112554845e-15,1

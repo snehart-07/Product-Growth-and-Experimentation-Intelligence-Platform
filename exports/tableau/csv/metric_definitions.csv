@@ -1,0 +1,21 @@
+metric_key,label,dataset_key,role,numerator,denominator,window,unit,caveat
+new_visitors,New visitors,ga4,diagnostic,"users with first_visit in the sample, bots removed",—,sample,count,"A visitor is a browser cookie, not a person"
+product_view_rate,Product view rate,ga4,diagnostic,viewed a product within 7 days,funnel-eligible new visitors,7 days,proportion,Strict order
+cart_rate,Add to cart rate,ga4,diagnostic,"added to cart after viewing, within 7 days",funnel-eligible new visitors,7 days,proportion,Strict order
+checkout_rate,Checkout rate,ga4,diagnostic,"began checkout after cart, within 7 days",funnel-eligible new visitors,7 days,proportion,Strict order
+purchase_conversion,Purchase conversion,ga4,secondary,"purchased after checkout, within 7 days",funnel-eligible new visitors,7 days,proportion,"User level, not session level"
+step_conversion,Step conversion,ga4,diagnostic,users reaching stage s,users reaching stage s−1,7 days,proportion,Wilson 95% interval
+return_d7,Return within 7 days,ga4,primary,any event on days 1–7 after first visit,visitors observable for 7 days,days 1–7,proportion,Window-based; censored visitors excluded
+return_d7_exact,Return on exactly day 7,ga4,sensitivity,any event on day 7,visitors observable for 7 days,day 7,proportion,Sensitivity check only
+return_d30,Return within 30 days,ga4,primary,any event on days 1–30,visitors observable for 30 days,days 1–30,proportion,Only first visits up to 2021-01-01
+weekly_retention,Weekly cohort retention,ga4,diagnostic,cohort visitors active in week k (days 7k..7k+6),cohort size,week k,proportion,"Cells not fully observed are unknown, not zero"
+return_after_24h,Return within a month (after day one),ga4,outcome,"any event in [t0+24h, t0+31d)",visitors observable for 31 days,24h–31d,proportion,Driver outcome; features use the first 24h only
+avg_order_value,Average order value,ga4,sizing input,sum of purchase revenue over distinct transactions,distinct transaction IDs,sample,USD,Obfuscated sample; for scenarios only
+odds_ratio,Odds ratio (adjusted),ga4,diagnostic,odds of returning with the behaviour,"odds without it, other terms held equal",24h–31d,odds ratio,"Association, not causation"
+game_d7,Day-7 retention,cookie_cats,primary,players with retention_7,players in the arm,day 7,proportion,Exact-day flag
+game_d1,Day-1 retention,cookie_cats,guardrail,players with retention_1,players in the arm,day 1,proportion,Non-inferiority margin −1.0 pt
+game_rounds,Rounds played,cookie_cats,guardrail,sum of sum_gamerounds,players in the arm,first 14 days,rounds,Winsorized at pooled 99.9th percentile; margin −2.5; measured after assignment
+game_revenue,Revenue / in-app purchases,cookie_cats,guardrail (missing),—,—,—,—,Not in the data
+email_conversion,Conversion,hillstrom,primary,customers who purchased,customers in the arm,2 weeks,proportion,Holm across 2 arms
+email_visit,Visit,hillstrom,secondary,customers who visited,customers in the arm,2 weeks,proportion,
+email_spend,Spend per customer,hillstrom,secondary,sum of spend (zeros included),customers in the arm,2 weeks,USD,"Zero-inflated; percentile bootstrap CI; revenue, not profit"
