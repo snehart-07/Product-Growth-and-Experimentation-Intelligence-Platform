@@ -37,10 +37,10 @@ src/quality/        SQL assertions that must return zero rows (exported to sql/t
 src/analysis/       funnel & cohorts, retention drivers, Cookie Cats, Hillstrom, simulation study
 src/reporting/      Tableau export + 259-check validator, decision memo
 scripts/            export_tableau_data.py
-exports/tableau/    Tableau-ready CSVs + growthlab.hyper, build guide, data dictionary, palette
+exports/tableau/    Tableau-ready CSVs (one per table grain)
 reports/            published statistics (results/*.json) and figures
-notebooks/          five executed analysis notebooks
-docs/               metric definitions, pre-analysis plans, causation note, setup, DQ rules
+notebooks/          five analysis notebooks with outputs
+docs/               metric definitions, pre-analysis plans, causation note
 memo/               one-page decision memo (PDF)
 tests/              offline unit, data-quality, analysis and export tests; BigQuery integration tests
 ```
@@ -50,10 +50,8 @@ tests/              offline unit, data-quality, analysis and export tests; BigQu
 You don't need to run anything to build the report. The validated tables are already in `exports/tableau/csv/`.
 
 1. In Tableau Public Desktop, choose **Connect → Text file** and open the CSVs in `exports/tableau/csv/`.
-2. Follow [`exports/tableau/report_build_guide.md`](exports/tableau/report_build_guide.md). It specifies six dashboards (Overview, Visitor Journey, Retention, Returning Users, Game Experiment and Email Experiment), with worksheets, calculated fields, filters, actions, tooltips and limits.
-3. Optionally copy `exports/tableau/Preferences.tps` to `~/Documents/My Tableau Public Repository/` for the colour palettes.
-
-Column definitions are in [`exports/tableau/data_dictionary.md`](exports/tableau/data_dictionary.md). Row counts, hashes and every validation result are in `manifest.json`.
+2. Keep one data source per table grain. Don't join tables with different grains.
+3. Rates on the store tables are `SUM(numerator) / SUM(denominator)`, so every filter recalculates correctly.
 
 ## Reproduce from scratch
 
@@ -62,7 +60,7 @@ make install
 export GOOGLE_CLOUD_PROJECT=<your-project-id>   # project that runs the BigQuery query jobs
 make gcloud-auth                                # Application Default Credentials
 make ga4-verify ga4-schema ga4-extract          # ~2.2 GiB scanned, within the BigQuery free tier
-make all                                        # models → checks → experiment data → analysis → notebooks → memo → Tableau export
+make all                                        # models → checks → experiment data → analysis → memo → Tableau export
 make test                                       # offline tests (BigQuery tests skip without credentials)
 ```
 

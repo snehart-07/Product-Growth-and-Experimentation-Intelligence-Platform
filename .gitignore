@@ -1,12 +1,16 @@
-# Python
+# ---------------------------------------------------------------- environment
 __pycache__/
 *.py[cod]
 .venv/
 venv/
 .pytest_cache/
 .ipynb_checkpoints/
+.DS_Store
+.idea/
+.vscode/
+.kiro/
 
-# Credentials and environment (never commit)
+# ---------------------------------------------------------------- credentials (never commit)
 .env
 .env.*
 *.pem
@@ -15,17 +19,26 @@ venv/
 application_default_credentials.json
 service-account*.json
 
-# Raw and intermediate data: regenerate with the Makefile
-data/raw/
-data/processed/
-data/metadata/*
-!data/metadata/.gitkeep
+# ---------------------------------------------------------------- data (re-download / re-extract with the Makefile)
+data/
 *.duckdb
 *.duckdb.wal
 *.parquet
-exports/tableau/.hyperlogs/
 
-# OS / editors
-.DS_Store
-.idea/
-.vscode/
+# ---------------------------------------------------------------- generated outputs (rebuilt by make tableau / make memo)
+exports/tableau/*.hyper
+exports/tableau/.hyperlogs/
+exports/tableau/manifest.json
+exports/tableau/relationships.json
+exports/tableau/data_dictionary.md
+exports/tableau/Preferences.tps
+sql/tests/
+memo/*.png
+
+# ---------------------------------------------------------------- local working notes, not part of the project
+exports/tableau/report_build_guide.md
+docs/google_cloud_setup.md
+docs/ga4_data_dictionary.md
+docs/data_quality_rules.md
+notebooks/build_notebooks.py
+src/pipeline/inspect.py

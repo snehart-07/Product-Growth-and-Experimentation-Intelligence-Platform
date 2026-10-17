@@ -1,6 +1,6 @@
 PY := .venv/bin/python
 
-.PHONY: install gcloud-auth ga4-verify ga4-schema ga4-extract models checks public-data analysis notebooks memo tableau all test test-integration
+.PHONY: install gcloud-auth ga4-verify ga4-schema ga4-extract models checks public-data analysis memo tableau all test test-integration
 
 install:          ## venv + pinned dependencies + notebook kernel
 	python3 -m venv .venv && $(PY) -m pip install --upgrade pip && $(PY) -m pip install -r requirements.txt
@@ -32,14 +32,12 @@ analysis:         ## statistics -> reports/results/*.json + reports/figures
 	$(PY) -m src.analysis.hillstrom
 	$(PY) -m src.analysis.simulation_study
 
-notebooks:
-	$(PY) notebooks/build_notebooks.py
 memo:             ## one-page decision memo + ER diagram
 	$(PY) -m src.reporting.build_reports
 tableau:          ## validated Tableau exports -> exports/tableau/
 	$(PY) scripts/export_tableau_data.py
 
-all: models checks public-data analysis notebooks memo tableau
+all: models checks public-data analysis memo tableau
 
 test:
 	$(PY) -m pytest -q
